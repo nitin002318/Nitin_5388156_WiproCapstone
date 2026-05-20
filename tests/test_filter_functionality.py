@@ -2,6 +2,7 @@ import time
 
 from utils.driver_setup import get_driver
 from pages.men_page import MenPage
+from utils.screenshot import take_screenshot
 
 
 def test_filter_functionality():
@@ -24,6 +25,7 @@ def test_filter_functionality():
     print("Verifying Filter Applied...")
 
     assert men.verify_filter_applied()
+    take_screenshot(driver, "Filter_applied")
 
     print("Filter Functionality Passed Successfully")
 

@@ -116,6 +116,17 @@ class MenPage:
             By.XPATH,
             "//h3[contains(text(),'No results found')]"
         )
+        # Wishlist Button
+        self.wishlist_button = (
+            By.XPATH,
+            "//span[contains(text(),'WISHLIST')]"
+        )
+
+        # Login Popup
+        self.login_popup = (
+            By.XPATH,
+            "//div[contains(text(),'Login')]"
+        )
 
 
     # Hover MEN
@@ -357,11 +368,34 @@ class MenPage:
         ).is_displayed()
 
     # Verify Invalid Search
+
     def verify_invalid_search(self):
+
+        time.sleep(5)
+
+        page_text = self.driver.page_source
+
+        if "xyzabc123" in page_text:
+            return True
+        else:
+            return False
+        return len(products) == 0
+    # Add To Wishlist
+    def add_to_wishlist(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        wait.until(
+            EC.element_to_be_clickable(
+                self.wishlist_button
+            )
+        ).click()
+
+    # Verify Wishlist/Login Popup
+    def verify_wishlist_added(self):
         wait = WebDriverWait(self.driver, 10)
 
         return wait.until(
             EC.visibility_of_element_located(
-                self.no_result
+                self.login_popup
             )
         ).is_displayed()

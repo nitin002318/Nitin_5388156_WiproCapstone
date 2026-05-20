@@ -1,5 +1,6 @@
 from utils.driver_setup import get_driver
 from pages.men_page import MenPage
+from utils.screenshot import take_screenshot
 
 
 def test_sort_functionality():
@@ -21,6 +22,7 @@ def test_sort_functionality():
 
     print("Selecting Better Discount...")
     men.select_better_discount()
+    take_screenshot(driver, "sorting")
 
     print("Sort Functionality Test Passed Successfully")
 

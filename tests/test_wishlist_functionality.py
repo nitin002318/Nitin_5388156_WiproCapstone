@@ -5,7 +5,8 @@ from pages.men_page import MenPage
 from utils.screenshot import take_screenshot
 
 
-def test_no_size_selected():
+
+def test_wishlist_functionality():
 
     print("Launching Myntra Website...")
 
@@ -32,18 +33,18 @@ def test_no_size_selected():
 
     time.sleep(5)
 
-    print("Clicking Add To Bag Without Selecting Size...")
-    men.add_product_to_bag()
+    print("Adding Product To Wishlist...")
+    men.add_to_wishlist()
 
-    time.sleep(3)
+    time.sleep(5)
 
-    print("Verifying Error Message...")
+    print("Verifying Wishlist Added...")
 
-    assert men.verify_size_error()
+    assert men.verify_wishlist_added()
+    take_screenshot(driver, "WIshlist")
 
-    take_screenshot(driver, "no_size_selected")
 
-    print("Negative Test Passed Successfully")
+    print("Wishlist Test Passed Successfully")
 
     time.sleep(5)
 

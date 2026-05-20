@@ -4,6 +4,8 @@ from utils.driver_setup import get_driver
 from pages.men_page import MenPage
 from utils.logger import logger
 from utils.csv_reader import get_test_data
+from utils.screenshot import take_screenshot
+
 
 
 def test_men_e2e():
@@ -85,6 +87,8 @@ def test_men_e2e():
 
     # Validate Donation Added
     assert final_amount > initial_amount
+    take_screenshot(driver, "E2E")
+
 
     print("Donation Added Successfully")
     logger.info("Donation Added Successfully")

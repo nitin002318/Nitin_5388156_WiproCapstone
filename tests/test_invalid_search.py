@@ -2,7 +2,7 @@ import time
 
 from utils.driver_setup import get_driver
 from pages.men_page import MenPage
-
+from utils.screenshot import take_screenshot
 
 def test_invalid_search():
 
@@ -24,6 +24,8 @@ def test_invalid_search():
     print("Verifying No Result Found...")
 
     assert men.verify_invalid_search()
+
+    take_screenshot(driver, "invalid_search")
 
     print("Negative Search Test Passed Successfully")
 
