@@ -1,0 +1,190 @@
+2026-05-20 16:02:30,176 - INFO - ====== WebDriver manager ======
+2026-05-20 16:02:30,778 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:02:56,839 - INFO - ====== WebDriver manager ======
+2026-05-20 16:02:57,404 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:03:25,817 - INFO - Launching Myntra Website
+2026-05-20 16:03:25,817 - INFO - ====== WebDriver manager ======
+2026-05-20 16:03:26,376 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:03:29,969 - INFO - Hovering on MEN menu
+2026-05-20 16:03:31,227 - INFO - Opening Casual Shoes category
+2026-05-20 16:03:34,557 - INFO - Opening first product
+2026-05-20 16:03:34,978 - INFO - Selecting Size: 8
+2026-05-20 16:03:39,067 - INFO - Adding product to bag
+2026-05-20 16:03:39,324 - INFO - Opening Cart Page
+2026-05-20 16:03:42,337 - INFO - Verifying product in cart
+2026-05-20 16:03:42,710 - INFO - Initial Amount: 825
+2026-05-20 16:03:42,710 - INFO - Selecting Donation Amount: \u20b920
+2026-05-20 16:03:44,923 - INFO - Final Amount: 845
+2026-05-20 16:03:45,150 - INFO - Donation Added Successfully
+2026-05-20 16:03:45,151 - INFO - Clicking Place Order
+2026-05-20 16:03:49,379 - INFO - E2E Test Passed Successfully
+2026-05-20 16:03:58,092 - INFO - ====== WebDriver manager ======
+2026-05-20 16:03:58,650 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:04:32,860 - INFO - ====== WebDriver manager ======
+2026-05-20 16:04:33,395 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:05:00,381 - INFO - Launching Myntra Website...
+2026-05-20 16:05:00,382 - INFO - ====== WebDriver manager ======
+2026-05-20 16:05:01,373 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:05:05,862 - INFO - Hovering on MEN Menu...
+2026-05-20 16:05:06,168 - INFO - Opening Casual Shoes...
+2026-05-20 16:05:08,560 - INFO - Clicking Sort Button...
+2026-05-20 16:05:08,894 - INFO - Selecting Better Discount...
+2026-05-20 16:05:14,158 - INFO - Sort Functionality Passed Successfully
+2026-05-20 16:05:16,570 - INFO - ====== WebDriver manager ======
+2026-05-20 16:05:17,144 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:17:30,911 - INFO - Launching Myntra Website
+2026-05-20 16:17:30,918 - INFO - ====== WebDriver manager ======
+2026-05-20 16:17:33,458 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:17:42,297 - INFO - Hovering on MEN Menu
+2026-05-20 16:17:42,894 - INFO - Opening Casual Shoes
+2026-05-20 16:17:46,443 - INFO - Applying Puma Brand Filter
+2026-05-20 16:17:54,262 - INFO - Verifying Filter Applied
+2026-05-20 16:17:54,909 - INFO - Screenshot Captured
+2026-05-20 16:17:54,909 - INFO - Filter Functionality Passed Successfully
+2026-05-20 16:18:02,441 - INFO - Browser Closed
+2026-05-20 16:18:02,443 - INFO - Launching Myntra Website
+2026-05-20 16:18:02,443 - INFO - ====== WebDriver manager ======
+2026-05-20 16:18:03,106 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:18:10,024 - INFO - Searching Invalid Product: xyzabc123
+2026-05-20 16:18:17,582 - INFO - Verifying No Result Found
+2026-05-20 16:18:23,030 - INFO - Screenshot Captured
+2026-05-20 16:18:23,031 - INFO - Negative Search Test Passed Successfully
+2026-05-20 16:18:30,448 - INFO - Browser Closed
+2026-05-20 16:18:30,450 - INFO - Launching Myntra Website
+2026-05-20 16:18:30,450 - INFO - ====== WebDriver manager ======
+2026-05-20 16:18:31,035 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:18:36,417 - INFO - Hovering on MEN menu
+2026-05-20 16:18:36,849 - INFO - Opening Casual Shoes category
+2026-05-20 16:18:37,553 - INFO - Opening first product
+2026-05-20 16:18:40,487 - INFO - Selecting Size: 8
+2026-05-20 16:18:44,574 - INFO - Adding product to bag
+2026-05-20 16:18:45,111 - INFO - Opening Cart Page
+2026-05-20 16:18:47,566 - INFO - Verifying product in cart
+2026-05-20 16:18:47,800 - INFO - Initial Amount: 825
+2026-05-20 16:18:47,801 - INFO - Selecting Donation Amount: \u20b920
+2026-05-20 16:18:50,151 - INFO - Final Amount: 845
+2026-05-20 16:18:50,304 - INFO - Screenshot Captured
+2026-05-20 16:18:50,304 - INFO - Donation Added Successfully
+2026-05-20 16:18:50,305 - INFO - Clicking Place Order
+2026-05-20 16:18:53,668 - INFO - E2E Test Passed Successfully
+2026-05-20 16:19:01,291 - INFO - Browser Closed
+2026-05-20 16:19:01,293 - INFO - Launching Myntra Website
+2026-05-20 16:19:01,293 - INFO - ====== WebDriver manager ======
+2026-05-20 16:19:02,116 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:19:09,643 - INFO - Hovering on MEN Menu
+2026-05-20 16:19:12,957 - INFO - Opening Casual Shoes
+2026-05-20 16:19:18,504 - INFO - Opening First Product
+2026-05-20 16:19:25,175 - INFO - Clicking Add To Bag Without Selecting Size
+2026-05-20 16:19:28,514 - INFO - Verifying Error Message
+2026-05-20 16:19:28,864 - INFO - Screenshot Captured
+2026-05-20 16:19:28,864 - INFO - Negative Test Passed Successfully
+2026-05-20 16:19:36,414 - INFO - Browser Closed
+2026-05-20 16:19:36,416 - INFO - Launching Myntra Website
+2026-05-20 16:19:36,416 - INFO - ====== WebDriver manager ======
+2026-05-20 16:19:37,025 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:19:43,246 - INFO - Searching Sneakers
+2026-05-20 16:19:50,866 - INFO - Verifying Search Results
+2026-05-20 16:19:51,499 - INFO - Screenshot Captured
+2026-05-20 16:19:54,499 - INFO - Search Functionality Passed Successfully
+2026-05-20 16:20:02,024 - INFO - Browser Closed
+2026-05-20 16:20:02,026 - INFO - Launching Myntra Website...
+2026-05-20 16:20:02,026 - INFO - ====== WebDriver manager ======
+2026-05-20 16:20:02,664 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:20:08,032 - INFO - Hovering on MEN Menu...
+2026-05-20 16:20:08,387 - INFO - Opening Casual Shoes...
+2026-05-20 16:20:08,956 - INFO - Clicking Sort Button...
+2026-05-20 16:20:11,766 - INFO - Selecting Better Discount...
+2026-05-20 16:20:16,954 - INFO - Sort Functionality Passed Successfully
+2026-05-20 16:20:20,171 - INFO - Launching Myntra Website
+2026-05-20 16:20:20,171 - INFO - ====== WebDriver manager ======
+2026-05-20 16:20:20,761 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:20:28,182 - INFO - Hovering on MEN Menu
+2026-05-20 16:20:31,488 - INFO - Opening Casual Shoes
+2026-05-20 16:20:40,165 - INFO - Opening First Product
+2026-05-20 16:20:46,173 - INFO - Adding Product To Wishlist
+2026-05-20 16:20:53,275 - INFO - Verifying Wishlist Added
+2026-05-20 16:20:53,663 - INFO - Screenshot Captured
+2026-05-20 16:20:53,664 - INFO - Wishlist Test Passed Successfully
+2026-05-20 16:21:01,671 - INFO - Browser Closed
+2026-05-20 16:23:13,287 - INFO - Launching Myntra Website
+2026-05-20 16:23:13,294 - INFO - ====== WebDriver manager ======
+2026-05-20 16:23:14,048 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:23:21,599 - INFO - Searching Invalid Product: xyzabc123
+2026-05-20 16:23:29,493 - INFO - Verifying No Result Found
+2026-05-20 16:23:34,849 - INFO - Screenshot Captured
+2026-05-20 16:23:34,850 - INFO - Negative Search Test Passed Successfully
+2026-05-20 16:23:43,120 - INFO - Browser Closed
+2026-05-20 16:31:55,523 - INFO - Launching Myntra Website
+2026-05-20 16:31:55,541 - INFO - ====== WebDriver manager ======
+2026-05-20 16:31:56,152 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:31:58,272 - INFO - Hovering on MEN Menu
+2026-05-20 16:32:01,552 - INFO - Opening Casual Shoes
+2026-05-20 16:32:04,161 - INFO - Applying Puma Brand Filter
+2026-05-20 16:32:11,496 - INFO - Verifying Filter Applied
+2026-05-20 16:32:12,077 - INFO - Screenshot Captured
+2026-05-20 16:32:12,080 - INFO - Filter Functionality Passed Successfully
+2026-05-20 16:32:20,028 - INFO - Browser Closed
+2026-05-20 16:32:20,031 - INFO - Launching Myntra Website
+2026-05-20 16:32:20,031 - INFO - ====== WebDriver manager ======
+2026-05-20 16:32:20,642 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:32:26,981 - INFO - Searching Invalid Product: xyzabc123
+2026-05-20 16:32:34,307 - INFO - Verifying No Result Found
+2026-05-20 16:32:40,210 - INFO - Screenshot Captured
+2026-05-20 16:32:40,211 - INFO - Negative Search Test Passed Successfully
+2026-05-20 16:32:49,450 - INFO - Browser Closed
+2026-05-20 16:32:49,452 - INFO - Launching Myntra Website
+2026-05-20 16:32:49,452 - INFO - ====== WebDriver manager ======
+2026-05-20 16:32:50,013 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:32:55,319 - INFO - Hovering on MEN menu
+2026-05-20 16:32:55,703 - INFO - Opening Casual Shoes category
+2026-05-20 16:32:58,518 - INFO - Opening first product
+2026-05-20 16:32:59,587 - INFO - Selecting Size: 8
+2026-05-20 16:33:03,712 - INFO - Adding product to bag
+2026-05-20 16:33:04,023 - INFO - Opening Cart Page
+2026-05-20 16:33:06,909 - INFO - Verifying product in cart
+2026-05-20 16:33:07,015 - INFO - Initial Amount: 2812
+2026-05-20 16:33:07,015 - INFO - Selecting Donation Amount: \u20b920
+2026-05-20 16:33:09,164 - INFO - Final Amount: 2832
+2026-05-20 16:33:09,247 - INFO - Screenshot Captured
+2026-05-20 16:33:09,247 - INFO - Donation Added Successfully
+2026-05-20 16:33:09,248 - INFO - Clicking Place Order
+2026-05-20 16:33:11,710 - INFO - E2E Test Passed Successfully
+2026-05-20 16:33:22,781 - INFO - Browser Closed
+2026-05-20 16:33:22,783 - INFO - Launching Myntra Website
+2026-05-20 16:33:22,784 - INFO - ====== WebDriver manager ======
+2026-05-20 16:33:23,419 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:33:30,173 - INFO - Hovering on MEN Menu
+2026-05-20 16:33:33,536 - INFO - Opening Casual Shoes
+2026-05-20 16:33:41,142 - INFO - Opening First Product
+2026-05-20 16:33:46,399 - INFO - Clicking Add To Bag Without Selecting Size
+2026-05-20 16:33:49,636 - INFO - Verifying Error Message
+2026-05-20 16:33:49,959 - INFO - Screenshot Captured
+2026-05-20 16:33:49,960 - INFO - Negative Test Passed Successfully
+2026-05-20 16:33:59,511 - INFO - Browser Closed
+2026-05-20 16:33:59,514 - INFO - Launching Myntra Website
+2026-05-20 16:33:59,515 - INFO - ====== WebDriver manager ======
+2026-05-20 16:34:00,113 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:34:08,168 - INFO - Searching Sneakers
+2026-05-20 16:34:15,612 - INFO - Verifying Search Results
+2026-05-20 16:34:16,036 - INFO - Screenshot Captured
+2026-05-20 16:34:19,057 - INFO - Search Functionality Passed Successfully
+2026-05-20 16:34:26,571 - INFO - Browser Closed
+2026-05-20 16:34:26,574 - INFO - Launching Myntra Website...
+2026-05-20 16:34:26,574 - INFO - ====== WebDriver manager ======
+2026-05-20 16:34:27,129 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:34:30,453 - INFO - Hovering on MEN Menu...
+2026-05-20 16:34:31,834 - INFO - Opening Casual Shoes...
+2026-05-20 16:34:35,713 - INFO - Clicking Sort Button...
+2026-05-20 16:34:36,001 - INFO - Selecting Better Discount...
+2026-05-20 16:34:41,221 - INFO - Sort Functionality Passed Successfully
+2026-05-20 16:34:43,923 - INFO - Launching Myntra Website
+2026-05-20 16:34:43,923 - INFO - ====== WebDriver manager ======
+2026-05-20 16:34:44,485 - INFO - Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-05-20 16:34:52,093 - INFO - Hovering on MEN Menu
+2026-05-20 16:34:55,395 - INFO - Opening Casual Shoes
+2026-05-20 16:35:03,642 - INFO - Opening First Product
+2026-05-20 16:35:10,103 - INFO - Adding Product To Wishlist
+2026-05-20 16:35:17,095 - INFO - Verifying Wishlist Added
+2026-05-20 16:35:17,277 - INFO - Screenshot Captured
+2026-05-20 16:35:17,277 - INFO - Wishlist Test Passed Successfully
+2026-05-20 16:35:27,123 - INFO - Browser Closed

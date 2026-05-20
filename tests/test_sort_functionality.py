@@ -1,29 +1,38 @@
 from utils.driver_setup import get_driver
 from pages.men_page import MenPage
-from utils.screenshot import take_screenshot
-
-
+from utils.logger import logger
 def test_sort_functionality():
 
+    # logger = setup_logger()
+
     print("Launching Myntra Website...")
+    logger.info("Launching Myntra Website...")
 
     driver = get_driver()
 
     men = MenPage(driver)
 
     print("Hovering on MEN Menu...")
+    logger.info("Hovering on MEN Menu...")
+
     men.hover_on_men()
 
     print("Opening Casual Shoes...")
+    logger.info("Opening Casual Shoes...")
+
     men.click_casual_shoes()
 
     print("Clicking Sort Button...")
+    logger.info("Clicking Sort Button...")
+
     men.click_sort()
 
     print("Selecting Better Discount...")
-    men.select_better_discount()
-    take_screenshot(driver, "sorting")
+    logger.info("Selecting Better Discount...")
 
-    print("Sort Functionality Test Passed Successfully")
+    men.select_better_discount()
+
+    print("Sort Functionality Passed Successfully")
+    logger.info("Sort Functionality Passed Successfully")
 
     driver.quit()

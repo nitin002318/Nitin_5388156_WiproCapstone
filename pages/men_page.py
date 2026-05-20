@@ -167,18 +167,37 @@ class MenPage:
     # Select Dynamic Size
     def select_size(self, size):
 
-        size_xpath = (
-            f"//p[contains(text(),'{size}')]"
-        )
-
         wait = WebDriverWait(self.driver, 10)
 
-        wait.until(
-            EC.element_to_be_clickable(
-                (By.XPATH, size_xpath)
-            )
-        ).click()
+        time.sleep(3)
 
+        sizes = wait.until(
+            EC.presence_of_all_elements_located(
+                (By.XPATH, "//div[@class='size-buttons-size-buttons']//button")
+            )
+        )
+
+        for s in sizes:
+
+            classes = s.get_attribute("class")
+
+            # Skip out of stock sizes
+            if "disabled" in classes:
+                continue
+
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView({block:'center'});", s
+            )
+
+            time.sleep(1)
+
+            self.driver.execute_script(
+                "arguments[0].click();", s
+            )
+
+            print("Available Size Selected")
+
+            break
     # Add Product To Bag
     def add_product_to_bag(self):
 
