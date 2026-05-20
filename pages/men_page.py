@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 
 class MenPage:
@@ -33,7 +34,13 @@ class MenPage:
             By.XPATH,
             "//div[contains(text(),'ADD TO BAG')]"
         )
+        # Size Error Message
+        self.size_error = (
+            By.XPATH,
+            "//span[contains(text(),'Please select a size')]"
+        )
 
+# No Result Text
         # GO TO BAG Button
         self.go_to_bag = (
             By.XPATH,
@@ -63,6 +70,53 @@ class MenPage:
             By.XPATH,
             "//div[contains(text(),'PLACE ORDER')]"
         )
+        # Login Page Validation
+        self.login_text = (
+            By.XPATH,
+            "//div[contains(text(),'Login')]"
+        )
+
+        #Sort
+        # Sort Button
+        self.sort_button = (
+            By.XPATH,
+            "//span[contains(text(),'Recommended')]"
+        )
+
+        # Better Discount Option
+        self.better_discount = (
+            By.XPATH,
+            "//label[contains(text(),'Better Discount')]"
+        )
+
+        # Brand Filter
+        self.brand_filter = (
+            By.XPATH,
+            "//label[contains(text(),'Puma')]"
+        )
+
+        # Filter Validation
+        self.filter_text = (
+            By.XPATH,
+            "//span[contains(text(),'Puma')]"
+        )
+        # Search Box
+        self.search_box = (
+            By.CLASS_NAME,
+            "desktop-searchBar"
+        )
+
+        # Search Result
+        self.search_result = (
+            By.XPATH,
+            "//h1[contains(text(),'Sneakers')]"
+        )
+        # No Result Text
+        self.no_result = (
+            By.XPATH,
+            "//h3[contains(text(),'No results found')]"
+        )
+
 
     # Hover MEN
     def hover_on_men(self):
@@ -204,3 +258,110 @@ class MenPage:
                 self.place_order
             )
         ).click()
+
+    # Click Sort Button
+    def click_sort(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        wait.until(
+            EC.element_to_be_clickable(
+                self.sort_button
+            )
+        ).click()
+
+    # Select Better Discount
+
+
+    def select_better_discount(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        option = wait.until(
+            EC.element_to_be_clickable(
+                self.better_discount
+            )
+        )
+
+        option.click()
+
+        print("Better Discount Sort Applied")
+
+        time.sleep(5)
+
+    # Apply Brand Filter
+    def apply_brand_filter(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        filter_option = wait.until(
+            EC.element_to_be_clickable(
+                self.brand_filter
+            )
+        )
+
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView();",
+            filter_option
+        )
+
+        import time
+        time.sleep(2)
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            filter_option
+        )
+
+        print("Puma Filter Applied")
+
+        time.sleep(5)
+
+    # Verify Filter Applied
+    def verify_filter_applied(self):
+        current_url = self.driver.current_url
+
+        return "casual-shoes" in current_url
+
+    # Search Product
+    def search_product(self, product):
+        wait = WebDriverWait(self.driver, 10)
+
+        search = wait.until(
+            EC.visibility_of_element_located(
+                self.search_box
+            )
+        )
+
+        search.send_keys(product)
+
+        from selenium.webdriver.common.keys import Keys
+
+        search.send_keys(Keys.ENTER)
+
+    # Verify Search Result
+    def verify_search_result(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        return wait.until(
+            EC.visibility_of_element_located(
+                self.search_result
+            )
+        ).is_displayed()
+
+    # Verify Size Error
+    def verify_size_error(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        return wait.until(
+            EC.visibility_of_element_located(
+                self.size_error
+            )
+        ).is_displayed()
+
+    # Verify Invalid Search
+    def verify_invalid_search(self):
+        wait = WebDriverWait(self.driver, 10)
+
+        return wait.until(
+            EC.visibility_of_element_located(
+                self.no_result
+            )
+        ).is_displayed()
