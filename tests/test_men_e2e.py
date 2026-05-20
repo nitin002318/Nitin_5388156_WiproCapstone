@@ -77,7 +77,7 @@ def test_men_e2e():
     # Validate Donation Added
     assert final_amount > initial_amount
 
-    take_screenshot(driver, "E2E")
+    take_screenshot(driver, "test_men_e2e")
     logger.info("Screenshot Captured")
 
     print("Donation Added Successfully")

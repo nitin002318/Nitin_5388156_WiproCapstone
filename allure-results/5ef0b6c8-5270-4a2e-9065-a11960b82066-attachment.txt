@@ -1,0 +1,8 @@
+[32mINFO    [0m root:test_search_functionality.py:12 Launching Myntra Website
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m root:test_search_functionality.py:22 Searching Sneakers
+[32mINFO    [0m root:test_search_functionality.py:28 Verifying Search Results
+[32mINFO    [0m root:test_search_functionality.py:33 Screenshot Captured
+[32mINFO    [0m root:test_search_functionality.py:38 Search Functionality Passed Successfully
+[32mINFO    [0m root:test_search_functionality.py:43 Browser Closed

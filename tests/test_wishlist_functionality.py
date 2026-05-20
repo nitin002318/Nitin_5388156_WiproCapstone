@@ -47,7 +47,7 @@ def test_wishlist_functionality():
 
     assert men.verify_wishlist_added()
 
-    take_screenshot(driver, "Wishlist")
+    take_screenshot(driver, "test_wishlist_functionality")
     logger.info("Screenshot Captured")
 
     print("Wishlist Test Passed Successfully")

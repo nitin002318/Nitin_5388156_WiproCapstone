@@ -47,7 +47,7 @@ def test_no_size_selected():
 
     assert men.verify_size_error()
 
-    take_screenshot(driver, "no_size_selected")
+    take_screenshot(driver, "test_no_size_selected")
     logger.info("Screenshot Captured")
 
     print("Negative Test Passed Successfully")

@@ -29,7 +29,7 @@ def test_search_functionality():
 
     assert men.verify_search_result()
 
-    take_screenshot(driver, "search")
+    take_screenshot(driver, "test_search_functionality")
     logger.info("Screenshot Captured")
 
     time.sleep(3)

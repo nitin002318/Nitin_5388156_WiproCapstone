@@ -32,7 +32,7 @@ def test_filter_functionality():
 
     assert men.verify_filter_applied()
 
-    take_screenshot(driver, "Filter_applied")
+    take_screenshot(driver, "test_filter_functionality")
     logger.info("Screenshot Captured")
 
     print("Filter Functionality Passed Successfully")

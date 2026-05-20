@@ -30,7 +30,7 @@ def test_invalid_search():
 
     assert men.verify_invalid_search()
 
-    take_screenshot(driver, "invalid_search")
+    take_screenshot(driver, "test_invalid_search")
     logger.info("Screenshot Captured")
 
     print("Negative Search Test Passed Successfully")
