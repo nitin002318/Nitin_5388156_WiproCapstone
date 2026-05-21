@@ -1,0 +1,11 @@
+[32mINFO    [0m root:test_no_size_selected.py:12 Launching Myntra Website
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m root:test_no_size_selected.py:22 Hovering on MEN Menu
+[32mINFO    [0m root:test_no_size_selected.py:28 Opening Casual Shoes
+[32mINFO    [0m root:test_no_size_selected.py:34 Opening First Product
+[32mINFO    [0m root:test_no_size_selected.py:40 Clicking Add To Bag Without Selecting Size
+[32mINFO    [0m root:test_no_size_selected.py:46 Verifying Error Message
+[32mINFO    [0m root:test_no_size_selected.py:51 Screenshot Captured
+[32mINFO    [0m root:test_no_size_selected.py:54 Negative Test Passed Successfully
+[32mINFO    [0m root:test_no_size_selected.py:59 Browser Closed

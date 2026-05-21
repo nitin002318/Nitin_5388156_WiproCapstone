@@ -1,0 +1,18 @@
+[32mINFO    [0m root:test_men_e2e.py:19 Launching Myntra Website
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m root:test_men_e2e.py:27 Hovering on MEN menu
+[32mINFO    [0m root:test_men_e2e.py:32 Opening Casual Shoes category
+[32mINFO    [0m root:test_men_e2e.py:37 Opening first product
+[32mINFO    [0m root:test_men_e2e.py:42 Selecting Size: 8
+[32mINFO    [0m root:test_men_e2e.py:47 Adding product to bag
+[32mINFO    [0m root:test_men_e2e.py:52 Opening Cart Page
+[32mINFO    [0m root:test_men_e2e.py:57 Verifying product in cart
+[32mINFO    [0m root:test_men_e2e.py:63 Initial Amount: 2812
+[32mINFO    [0m root:test_men_e2e.py:67 Selecting Donation Amount: ₹20
+[32mINFO    [0m root:test_men_e2e.py:75 Final Amount: 2832
+[32mINFO    [0m root:test_men_e2e.py:81 Screenshot Captured
+[32mINFO    [0m root:test_men_e2e.py:84 Donation Added Successfully
+[32mINFO    [0m root:test_men_e2e.py:88 Clicking Place Order
+[32mINFO    [0m root:test_men_e2e.py:92 E2E Test Passed Successfully
+[32mINFO    [0m root:test_men_e2e.py:97 Browser Closed
