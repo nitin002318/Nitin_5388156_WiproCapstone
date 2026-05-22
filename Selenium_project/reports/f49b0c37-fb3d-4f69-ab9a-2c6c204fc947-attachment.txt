@@ -1,0 +1,11 @@
+[32mINFO    [0m root:test_wishlist_functionality.py:12 Launching Myntra Website
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m root:test_wishlist_functionality.py:22 Hovering on MEN Menu
+[32mINFO    [0m root:test_wishlist_functionality.py:28 Opening Casual Shoes
+[32mINFO    [0m root:test_wishlist_functionality.py:34 Opening First Product
+[32mINFO    [0m root:test_wishlist_functionality.py:40 Adding Product To Wishlist
+[32mINFO    [0m root:test_wishlist_functionality.py:46 Verifying Wishlist Added
+[32mINFO    [0m root:test_wishlist_functionality.py:51 Screenshot Captured
+[32mINFO    [0m root:test_wishlist_functionality.py:54 Wishlist Test Passed Successfully
+[32mINFO    [0m root:test_wishlist_functionality.py:59 Browser Closed
