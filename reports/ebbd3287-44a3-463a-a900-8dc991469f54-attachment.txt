@@ -1,8 +1,0 @@
-[32mINFO    [0m root:test_invalid_search.py:12 Launching Myntra Website
-[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
-[32mINFO    [0m root:test_invalid_search.py:23 Searching Invalid Product: xyzabc123
-[32mINFO    [0m root:test_invalid_search.py:30 Verifying No Result Found
-[32mINFO    [0m root:test_invalid_search.py:35 Screenshot Captured
-[32mINFO    [0m root:test_invalid_search.py:38 Negative Search Test Passed Successfully
-[32mINFO    [0m root:test_invalid_search.py:43 Browser Closed
