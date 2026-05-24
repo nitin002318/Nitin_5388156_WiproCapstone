@@ -1,7 +1,7 @@
 import time
 
 from Selenium_project.utils.driver_setup import get_driver
-from Selenium_project.pages import MenPage
+from Selenium_project.pages.men_page import MenPage
 from Selenium_project.utils.screenshot import take_screenshot
 from Selenium_project.utils.logger import logger
 
@@ -21,6 +21,7 @@ def test_invalid_search():
 
     print("Searching Invalid Product...")
     logger.info("Searching Invalid Product: xyzabc123")
+
     men.search_product("xyzabc123")
 
     time.sleep(5)

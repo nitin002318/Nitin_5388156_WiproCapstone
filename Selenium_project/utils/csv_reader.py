@@ -4,13 +4,18 @@ import os
 
 def get_test_data():
 
+    data = []
+
+    current_dir = os.path.dirname(__file__)
+
     file_path = os.path.join(
-        os.getcwd(),
+        current_dir,
+        "..",
         "test_data",
         "men_test_data.csv"
     )
 
-    data_list = []
+    file_path = os.path.abspath(file_path)
 
     with open(file_path, newline="") as file:
 
@@ -18,11 +23,11 @@ def get_test_data():
 
         for row in reader:
 
-            data_list.append(
+            data.append(
                 (
                     row["size"],
                     row["donation"]
                 )
             )
 
-    return data_list
+    return data

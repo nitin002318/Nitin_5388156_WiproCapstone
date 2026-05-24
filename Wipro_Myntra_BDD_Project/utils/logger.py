@@ -1,32 +1,28 @@
 import logging
 import os
 
-
-# Logs folder create karega agar nahi hai
 if not os.path.exists("logs"):
     os.makedirs("logs")
 
 
-# Logger Create
-logger = logging.getLogger()
+def get_logger():
 
-logger.setLevel(logging.INFO)
+    logger = logging.getLogger("MyntraLogger")
 
+    logger.setLevel(logging.INFO)
 
-# File Handler
-file_handler = logging.FileHandler("logs/test.log")
+    if not logger.handlers:
 
-file_handler.setLevel(logging.INFO)
+        file_handler = logging.FileHandler(
+            "logs/test.log"
+        )
 
+        formatter = logging.Formatter(
+            "%(asctime)s - %(levelname)s - %(message)s"
+        )
 
-# Format
-formatter = logging.Formatter(
-    "%(asctime)s - %(levelname)s - %(message)s"
-)
+        file_handler.setFormatter(formatter)
 
-file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
 
-
-# Duplicate logs avoid
-if not logger.handlers:
-    logger.addHandler(file_handler)
+    return logger

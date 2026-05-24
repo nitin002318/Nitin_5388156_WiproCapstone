@@ -1,7 +1,7 @@
 import time
 
 from Selenium_project.utils.driver_setup import get_driver
-from Selenium_project.pages import MenPage
+from Selenium_project.pages.men_page import MenPage
 from Selenium_project.utils.screenshot import take_screenshot
 from Selenium_project.utils.logger import logger
 
@@ -20,6 +20,7 @@ def test_search_functionality():
 
     print("Searching Sneakers...")
     logger.info("Searching Sneakers")
+
     men.search_product("Sneakers")
 
     time.sleep(5)

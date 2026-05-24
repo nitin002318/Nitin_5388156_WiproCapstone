@@ -1,9 +1,5 @@
 selenium
-webdriver-manager
-pytest
-pytest-html
-allure-pytest
 behave
-behave-html-formatter
-pytest-xdist
-requests
+webdriver-manager
+allure-behave
+pytest

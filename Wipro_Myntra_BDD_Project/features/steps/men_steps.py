@@ -1,329 +1,195 @@
-from behave import given, when, then
+from behave import *
+
 from pages.men_page import MenPage
-from utils.driver_setup import get_driver
-from utils.screenshot import take_screenshot
-from utils.logger import logger
-import time
 
 
 # =========================
-# COMMON STEPS
+# LAUNCH WEBSITE
 # =========================
 
 @given("User launches Myntra website")
-def step_launch_website(context):
-
-    context.driver = get_driver()
-
-    context.driver.maximize_window()
+def step_launch(context):
 
     context.men = MenPage(context.driver)
 
-    print("Myntra Website Opened")
-    logger.info("Myntra Website Opened")
+    context.men.open_website()
 
+
+# =========================
+# MEN MENU
+# =========================
 
 @when("User hovers on MEN menu")
 def step_hover_men(context):
 
     context.men.hover_on_men()
 
-    print("Hovered on MEN Menu")
-    logger.info("Hovered on MEN Menu")
 
+# =========================
+# CASUAL SHOES
+# =========================
 
 @when("User opens Casual Shoes category")
-def step_open_casual_shoes(context):
+def step_open_casual(context):
 
-    context.men.click_casual_shoes()
+    context.men.open_casual_shoes()
 
-    print("Casual Shoes Opened")
-    logger.info("Casual Shoes Opened")
 
+# =========================
+# FIRST PRODUCT
+# =========================
 
 @when("User opens first product")
-def step_open_first_product(context):
+def step_open_product(context):
 
     context.men.open_first_product()
 
-    print("First Product Opened")
-    logger.info("First Product Opened")
+
+# =========================
+# SIZE
+# =========================
+
+@when("User selects size")
+def step_select_size(context):
+
+    context.men.select_size()
 
 
 # =========================
-# E2E FLOW
+# ADD TO BAG
 # =========================
-
-@when('User selects size "{size}"')
-def step_select_size(context, size):
-
-    context.men.select_size(size)
-
-    print(f"Size Selected: {size}")
-    logger.info(f"Size Selected: {size}")
-
 
 @when("User adds product to bag")
-def step_add_to_bag(context):
+def step_add_bag(context):
 
     context.men.add_product_to_bag()
 
-    print("Product Added To Bag")
-    logger.info("Product Added To Bag")
 
+# =========================
+# OPEN CART
+# =========================
 
 @when("User opens cart page")
 def step_open_cart(context):
 
-    context.men.go_to_cart()
-
-    print("Cart Opened")
-    logger.info("Cart Opened")
+    context.men.open_cart()
 
 
-@then("Product should be added to cart")
-def step_verify_bag(context):
+# =========================
+# VERIFY CART
+# =========================
 
-    assert context.men.verify_bag()
+@then("Product should be added successfully")
+def step_verify_cart(context):
 
-    print("Product Verified In Cart")
-    logger.info("Product Verified In Cart")
-
-
-@when('User selects donation amount "{donation}"')
-def step_select_donation(context, donation):
-
-    context.initial_amount = context.men.get_total_amount()
-
-    context.men.select_donation_amount(donation)
-
-    time.sleep(2)
-
-    context.final_amount = context.men.get_total_amount()
-
-    print(f"Donation Selected: ₹{donation}")
-    logger.info(f"Donation Selected: ₹{donation}")
+    assert context.men.verify_cart()
 
 
-@then("Donation should be added successfully")
-def step_verify_donation(context):
-
-    assert context.final_amount > context.initial_amount
-
-    print("Donation Added Successfully")
-    logger.info("Donation Added Successfully")
-
+# =========================
+# PLACE ORDER
+# =========================
 
 @when("User clicks place order")
 def step_place_order(context):
 
     context.men.click_place_order()
 
-    print("Place Order Clicked")
-    logger.info("Place Order Clicked")
 
+# =========================
+# VERIFY LOGIN PAGE
+# =========================
 
-@then("E2E flow should complete successfully")
-def step_complete(context):
+@then("Login page should open")
+def step_verify_login(context):
 
-    take_screenshot(context.driver, "e2e_flow")
-
-    print("BDD E2E Test Passed Successfully")
-    logger.info("BDD E2E Test Passed Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")
+    assert context.men.verify_login_page()
 
 
 # =========================
-# SEARCH FUNCTIONALITY
+# SEARCH
 # =========================
 
 @when('User searches for "{product}"')
-def step_search_product(context, product):
+def step_search(context, product):
 
     context.men.search_product(product)
 
-    print(f"Searched Product: {product}")
-    logger.info(f"Searched Product: {product}")
-
 
 @then("Search results should be displayed")
-def step_verify_search(context):
+def step_search_result(context):
 
-    assert context.men.verify_search_result()
-
-    take_screenshot(context.driver, "search_functionality")
-
-    print("Search Results Displayed Successfully")
-    logger.info("Search Results Displayed Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")
+    assert context.men.verify_search()
 
 
 # =========================
-# FILTER FUNCTIONALITY
+# INVALID SEARCH
+# =========================
+
+@then("No result message should display")
+def step_invalid_search(context):
+
+    assert context.men.verify_invalid_search()
+
+
+# =========================
+# FILTER
 # =========================
 
 @when("User applies Puma filter")
-def step_apply_filter(context):
+def step_filter(context):
 
-    context.men.apply_brand_filter()
-
-    print("Puma Filter Applied")
-    logger.info("Puma Filter Applied")
+    context.men.apply_puma_filter()
 
 
-@then("Filter should be applied successfully")
+@then("Puma filter should be applied")
 def step_verify_filter(context):
 
-    assert context.men.verify_filter_applied()
-
-    take_screenshot(context.driver, "filter_functionality")
-
-    print("Filter Applied Successfully")
-    logger.info("Filter Applied Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")
+    assert context.men.verify_filter()
 
 
 # =========================
-# SORT FUNCTIONALITY
+# SORT
 # =========================
 
-@when("User clicks sort button")
-def step_click_sort(context):
+@when("User applies Better Discount sort")
+def step_sort(context):
 
-    context.men.click_sort()
-
-    print("Sort Button Clicked")
-    logger.info("Sort Button Clicked")
+    context.men.apply_sort()
 
 
-@when("User selects Better Discount option")
-def step_select_discount(context):
-
-    context.men.select_better_discount()
-
-    print("Better Discount Selected")
-    logger.info("Better Discount Selected")
-
-
-@then("Products should be sorted successfully")
+@then("Products should be sorted")
 def step_verify_sort(context):
 
-    assert True
-
-    take_screenshot(context.driver, "sort_functionality")
-
-    print("Products Sorted Successfully")
-    logger.info("Products Sorted Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")
+    assert context.men.verify_sort()
 
 
 # =========================
-# WISHLIST FUNCTIONALITY
+# WISHLIST
 # =========================
 
-@when("User adds product to wishlist")
-def step_add_wishlist(context):
+@when("User clicks wishlist button")
+def step_wishlist(context):
 
-    context.men.add_to_wishlist()
-
-    print("Product Added To Wishlist")
-    logger.info("Product Added To Wishlist")
+    context.men.click_wishlist()
 
 
-@then("Wishlist popup should be displayed")
-def step_verify_wishlist(context):
+@then("Login popup should appear")
+def step_verify_popup(context):
 
-    assert context.men.verify_wishlist_added()
-
-    take_screenshot(context.driver, "wishlist_functionality")
-
-    print("Wishlist Popup Displayed Successfully")
-    logger.info("Wishlist Popup Displayed Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")
+    assert context.men.verify_login_popup()
 
 
 # =========================
-# NEGATIVE TEST CASE
-# NO SIZE SELECTED
+# NO SIZE NEGATIVE
 # =========================
 
-@when("User clicks add to bag without selecting size")
+@when("User clicks add to bag without size")
 def step_add_without_size(context):
 
     context.men.add_product_to_bag()
 
-    print("Clicked Add To Bag Without Selecting Size")
-    logger.info("Clicked Add To Bag Without Selecting Size")
 
-
-@then("Size error message should be displayed")
+@then("Size error message should display")
 def step_verify_size_error(context):
 
     assert context.men.verify_size_error()
-
-    take_screenshot(context.driver, "no_size_selected")
-
-    print("Size Error Message Displayed Successfully")
-    logger.info("Size Error Message Displayed Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")
-
-
-# =========================
-# NEGATIVE TEST CASE
-# INVALID SEARCH
-# =========================
-
-@when("User searches invalid product")
-def step_invalid_search(context):
-
-    context.men.search_product("xyzabc123")
-
-    print("Invalid Product Searched")
-    logger.info("Invalid Product Searched")
-
-
-@then("No result message should be displayed")
-def step_verify_invalid_search(context):
-
-    assert context.men.verify_invalid_search()
-
-    take_screenshot(context.driver, "invalid_search")
-
-    print("No Result Message Displayed Successfully")
-    logger.info("No Result Message Displayed Successfully")
-
-    time.sleep(3)
-
-    context.driver.quit()
-
-    logger.info("Browser Closed")

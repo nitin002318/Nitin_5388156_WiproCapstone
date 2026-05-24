@@ -1,11 +1,10 @@
 from Selenium_project.utils.driver_setup import get_driver
-from Selenium_project.pages import MenPage
+from Selenium_project.pages.men_page import MenPage
 from Selenium_project.utils.logger import logger
 from Selenium_project.utils.screenshot import take_screenshot
 
-def test_sort_functionality():
 
-    # logger = setup_logger()
+def test_sort_functionality():
 
     print("Launching Myntra Website...")
     logger.info("Launching Myntra Website...")
@@ -33,6 +32,7 @@ def test_sort_functionality():
     logger.info("Selecting Better Discount...")
 
     men.select_better_discount()
+
     take_screenshot(driver, "test_sort_functionality")
 
     print("Sort Functionality Passed Successfully")

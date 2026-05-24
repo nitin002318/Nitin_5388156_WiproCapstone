@@ -1,27 +1,23 @@
 import os
-import allure
-from allure_commons.types import AttachmentType
 from datetime import datetime
 
 
-def take_screenshot(driver, name):
+def take_screenshot(driver, scenario_name):
 
-    screenshots_dir = "screenshots"
+    folder_path = "reports/screenshots"
 
-    if not os.path.exists(screenshots_dir):
-        os.makedirs(screenshots_dir)
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    file_path = f"{screenshots_dir}/{name}_{timestamp}.png"
-
-    driver.save_screenshot(file_path)
-
-    # Attach Screenshot To Allure Report
-    allure.attach.file(
-        file_path,
-        name=name,
-        attachment_type=AttachmentType.PNG
+    timestamp = datetime.now().strftime(
+        "%Y%m%d_%H%M%S"
     )
 
-    print(f"Screenshot Saved: {file_path}")
+    file_name = f"{scenario_name}_{timestamp}.png"
+
+    screenshot_path = os.path.join(
+        folder_path,
+        file_name
+    )
+
+    driver.save_screenshot(screenshot_path)

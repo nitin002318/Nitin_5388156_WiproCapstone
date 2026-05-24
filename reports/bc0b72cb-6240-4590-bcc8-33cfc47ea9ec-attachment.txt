@@ -1,0 +1,10 @@
+[32mINFO    [0m root:test_filter_functionality.py:12 Launching Myntra Website
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\wprjavanguser\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m root:test_filter_functionality.py:19 Hovering on MEN Menu
+[32mINFO    [0m root:test_filter_functionality.py:24 Opening Casual Shoes
+[32mINFO    [0m root:test_filter_functionality.py:29 Applying Puma Brand Filter
+[32mINFO    [0m root:test_filter_functionality.py:34 Verifying Filter Applied
+[32mINFO    [0m root:test_filter_functionality.py:39 Screenshot Captured
+[32mINFO    [0m root:test_filter_functionality.py:42 Filter Functionality Passed Successfully
+[32mINFO    [0m root:test_filter_functionality.py:47 Browser Closed

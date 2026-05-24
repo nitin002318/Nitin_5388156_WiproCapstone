@@ -2,7 +2,7 @@ import time
 import pytest
 
 from Selenium_project.utils.driver_setup import get_driver
-from Selenium_project.pages import MenPage
+from Selenium_project.pages.men_page import MenPage
 from Selenium_project.utils.logger import logger
 from Selenium_project.utils.csv_reader import get_test_data
 from Selenium_project.utils.screenshot import take_screenshot

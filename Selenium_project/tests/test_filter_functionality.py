@@ -1,7 +1,7 @@
 import time
 
 from Selenium_project.utils.driver_setup import get_driver
-from Selenium_project.pages import MenPage
+from Selenium_project.pages.men_page import MenPage
 from Selenium_project.utils.screenshot import take_screenshot
 from Selenium_project.utils.logger import logger
 
@@ -17,14 +17,17 @@ def test_filter_functionality():
 
     print("Hovering on MEN Menu...")
     logger.info("Hovering on MEN Menu")
+
     men.hover_on_men()
 
     print("Opening Casual Shoes...")
     logger.info("Opening Casual Shoes")
+
     men.click_casual_shoes()
 
     print("Applying Puma Brand Filter...")
     logger.info("Applying Puma Brand Filter")
+
     men.apply_brand_filter()
 
     print("Verifying Filter Applied...")

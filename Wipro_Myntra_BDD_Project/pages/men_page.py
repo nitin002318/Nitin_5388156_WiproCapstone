@@ -1,310 +1,360 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from pages.base_page import BasePage
+
 import time
+import logging
 
 
-class MenPage:
+class MenPage(BasePage):
 
     def __init__(self, driver):
 
+        super().__init__(driver)
+
         self.driver = driver
 
-        # MEN Menu
+        # MEN MENU
         self.men_menu = (
             By.XPATH,
             "//a[@data-group='men']"
         )
 
-        # Casual Shoes Category
+        # CASUAL SHOES
         self.casual_shoes = (
             By.XPATH,
             "//a[contains(@href,'casual-shoes')]"
         )
 
-        # First Product
+        # FIRST PRODUCT
         self.first_product = (
             By.XPATH,
-            "(//li[@class='product-base'])[1]"
+            "(//li[contains(@class,'product-base')])[1]"
         )
 
-        # Add To Bag Button
+        # SIZE BUTTONS
+        self.size_buttons = (
+            By.XPATH,
+            "//div[@id='sizeButtonsContainer']//button"
+        )
+
         self.add_to_bag = (
             By.XPATH,
-            "//div[contains(text(),'ADD TO BAG')]"
-        )
-        # Size Error Message
-        self.size_error = (
-            By.XPATH,
-            "//span[contains(text(),'Please select a size')]"
+            "//div[contains(@class,'pdp-add-to-bag')]"
         )
 
-# No Result Text
-        # GO TO BAG Button
+        # GO TO BAG
         self.go_to_bag = (
             By.XPATH,
             "//span[contains(text(),'GO TO BAG')]"
         )
 
-        # Bag Validation
-        self.bag = (
+        # PRICE DETAILS
+        self.price_details = (
             By.XPATH,
             "//div[contains(text(),'PRICE DETAILS')]"
         )
 
-        # Donation Checkbox
-        # self.donation_checkbox = (
-        #     By.XPATH,
-        #     "//label[contains(@for,'donation')]"
-        # )
-
-        # Total Amount
-        # Total Amount
-        self.total_amount = (
-            By.XPATH,
-            "//div[contains(@class,'priceDetail')]/span"
-        )
-        # Place Order Button
+        # PLACE ORDER
         self.place_order = (
             By.XPATH,
             "//div[contains(text(),'PLACE ORDER')]"
         )
-        # Login Page Validation
-        self.login_text = (
+
+        # LOGIN PAGE
+        self.login_input = (
             By.XPATH,
-            "//div[contains(text(),'Login')]"
+            "//input[contains(@placeholder,'Mobile Number')]"
         )
 
-        #Sort
-        # Sort Button
-        self.sort_button = (
-            By.XPATH,
-            "//span[contains(text(),'Recommended')]"
-        )
-
-        # Better Discount Option
-        self.better_discount = (
-            By.XPATH,
-            "//label[contains(text(),'Better Discount')]"
-        )
-
-        # Brand Filter
-        self.brand_filter = (
-            By.XPATH,
-            "//label[contains(text(),'Puma')]"
-        )
-
-        # Filter Validation
-        self.filter_text = (
-            By.XPATH,
-            "//span[contains(text(),'Puma')]"
-        )
-        # Search Box
+        # SEARCH BOX
         self.search_box = (
             By.CLASS_NAME,
             "desktop-searchBar"
         )
 
-        # Search Result
+        # SEARCH RESULT
         self.search_result = (
             By.XPATH,
-            "//h1[contains(text(),'Sneakers')]"
+            "//h1"
         )
-        # No Result Text
-        self.no_result = (
+
+        # INVALID SEARCH
+        self.invalid_search = (
             By.XPATH,
-            "//h3[contains(text(),'No results found')]"
+            "//*[contains(text(),'No results found')]"
         )
-        # Wishlist Button
+
+        # PUMA FILTER
+        self.puma_filter = (
+            By.XPATH,
+            "//label[contains(.,'Puma')]"
+        )
+
+        # SORT BUTTON
+        self.sort_button = (
+            By.XPATH,
+            "//div[contains(@class,'sort-sortBy')]"
+        )
+
+        # BETTER DISCOUNT
+        self.better_discount = (
+            By.XPATH,
+            "//label[contains(.,'Better Discount')]"
+        )
+
+        # WISHLIST BUTTON
         self.wishlist_button = (
             By.XPATH,
-            "//span[contains(text(),'WISHLIST')]"
+            "//div[contains(@class,'pdp-add-to-wishlist')]"
         )
 
-        # Login Popup
+        # LOGIN POPUP
         self.login_popup = (
             By.XPATH,
-            "//div[contains(text(),'Login')]"
+            "//*[contains(text(),'Login')]"
         )
 
+        # SIZE ERROR
+        self.size_error = (
+            By.XPATH,
+            "//*[contains(text(),'select a size')]"
+        )
 
-    # Hover MEN
+    # OPEN WEBSITE
+    def open_website(self):
+
+        self.driver.get("https://www.myntra.com/")
+
+        self.driver.maximize_window()
+
+        logging.info("Website Opened")
+
+    # HOVER MEN
     def hover_on_men(self):
 
-        actions = ActionChains(self.driver)
+        men = self.get_element(self.men_menu)
 
-        men = self.driver.find_element(*self.men_menu)
+        ActionChains(self.driver).move_to_element(men).perform()
 
-        actions.move_to_element(men).perform()
+        logging.info("Hovered On MEN")
 
-    # Open Casual Shoes
-    def click_casual_shoes(self):
+        time.sleep(2)
 
-        wait = WebDriverWait(self.driver, 10)
+    # OPEN CASUAL SHOES
+    def open_casual_shoes(self):
 
-        wait.until(
-            EC.element_to_be_clickable(
-                self.casual_shoes
-            )
-        ).click()
+        casual = self.get_element(self.casual_shoes)
 
-    # Open First Product
+        self.scroll(casual)
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            casual
+        )
+
+        logging.info("Casual Shoes Opened")
+
+        time.sleep(4)
+
+    # OPEN FIRST PRODUCT
     def open_first_product(self):
 
-        wait = WebDriverWait(self.driver, 10)
+        old_tabs = self.driver.window_handles
 
-        wait.until(
-            EC.element_to_be_clickable(
-                self.first_product
-            )
-        ).click()
+        product = self.get_element(self.first_product)
 
-        windows = self.driver.window_handles
+        self.scroll(product)
 
-        self.driver.switch_to.window(windows[1])
+        self.driver.execute_script(
+            "arguments[0].click();",
+            product
+        )
 
-    # Select Dynamic Size
-    def select_size(self, size):
+        time.sleep(5)
 
-        wait = WebDriverWait(self.driver, 10)
+        new_tabs = self.driver.window_handles
 
-        time.sleep(3)
+        if len(new_tabs) > len(old_tabs):
 
-        sizes = wait.until(
+            self.driver.switch_to.window(new_tabs[-1])
+
+        logging.info("First Product Opened")
+
+    # SELECT SIZE
+
+    def select_size(self):
+
+        wait = WebDriverWait(self.driver, 15)
+
+        buttons = wait.until(
             EC.presence_of_all_elements_located(
-                (By.XPATH, "//div[@class='size-buttons-size-buttons']//button")
+                self.size_buttons
             )
         )
 
-        for s in sizes:
+        for btn in buttons:
 
-            classes = s.get_attribute("class")
+            try:
 
-            # Skip out of stock sizes
-            if "disabled" in classes:
-                continue
+                if btn.is_displayed() and btn.is_enabled():
+                    self.driver.execute_script(
+                        "arguments[0].scrollIntoView();",
+                        btn
+                    )
 
-            self.driver.execute_script(
-                "arguments[0].scrollIntoView({block:'center'});", s
-            )
+                    time.sleep(1)
 
-            time.sleep(1)
+                    self.driver.execute_script(
+                        "arguments[0].click();",
+                        btn
+                    )
 
-            self.driver.execute_script(
-                "arguments[0].click();", s
-            )
+                    logging.info("Size Selected")
 
-            print("Available Size Selected")
+                    break
 
-            break
-    # Add Product To Bag
+            except Exception as e:
+
+                logging.error(f"Size selection failed: {e}")
+    # ADD PRODUCT TO BAG
     def add_product_to_bag(self):
 
-        wait = WebDriverWait(self.driver, 10)
+        wait = WebDriverWait(self.driver, 15)
 
-        wait.until(
+        add_btn = wait.until(
             EC.element_to_be_clickable(
                 self.add_to_bag
             )
-        ).click()
-
-    # Open Cart Page
-    def go_to_cart(self):
-
-        wait = WebDriverWait(self.driver, 10)
-
-        wait.until(
-            EC.element_to_be_clickable(
-                self.go_to_bag
-            )
-        ).click()
-
-    # Verify Bag
-    def verify_bag(self):
-        wait = WebDriverWait(self.driver, 20)
-
-        return wait.until(
-            EC.visibility_of_element_located(
-                self.bag
-            )
-        ).is_displayed()
-
-    # Get Total Amount
-    # Get Total Amount
-    def get_total_amount(self):
-        wait = WebDriverWait(self.driver, 20)
-
-        amounts = wait.until(
-            EC.presence_of_all_elements_located(
-                self.total_amount
-            )
         )
 
-        final_amount = amounts[-1].text
-
-        final_amount = (
-            final_amount.replace("₹", "")
-            .replace(",", "")
-            .strip()
-        )
-
-        return int(final_amount)
-
-    # Select Donation Amount
-    # Select Donation Amount
-    def select_donation_amount(self, amount):
-        wait = WebDriverWait(self.driver, 10)
-
-        # Donation Button Dynamic XPath
-        donation_xpath = (
-            f"//div[@data-key='{amount}']"
-        )
-
-        donation_button = wait.until(
-            EC.element_to_be_clickable(
-                (By.XPATH, donation_xpath)
-            )
-        )
-
-        # Scroll to Donation Button
         self.driver.execute_script(
             "arguments[0].scrollIntoView();",
-            donation_button
+            add_btn
         )
 
-        # Click Donation Amount
+        time.sleep(1)
+
         self.driver.execute_script(
             "arguments[0].click();",
-            donation_button
+            add_btn
         )
-    # Click Place Order
+
+        logging.info("Product Added To Bag")
+
+        time.sleep(3)
+
+    # VERIFY CART
+
+    def verify_cart(self):
+
+        return self.get_element(
+            self.price_details
+        ).is_displayed()
+
+    # PLACE ORDER
     def click_place_order(self):
 
+        place = self.get_element(
+            self.place_order
+        )
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            place
+        )
+
+        logging.info("Place Order Clicked")
+
+        time.sleep(3)
+
+    # VERIFY LOGIN PAGE
+    def verify_login_page(self):
+
+        return self.get_element(
+            self.login_input
+        ).is_displayed()
+
+    # SEARCH PRODUCT
+    def search_product(self, product):
+
+        search = self.get_element(
+            self.search_box
+        )
+
+        search.clear()
+
+        search.send_keys(product)
+
+        search.send_keys(Keys.ENTER)
+
+        logging.info(
+            f"{product} searched"
+        )
+
+        time.sleep(4)
+
+    # VERIFY SEARCH
+    def verify_search(self):
+
+        return self.get_element(
+            self.search_result
+        ).is_displayed()
+
+    # VERIFY INVALID SEARCH
+    def verify_invalid_search(self):
+
+        return (
+            "No results found"
+            in self.driver.page_source
+        )
+
+    # APPLY FILTER
+    def apply_puma_filter(self):
+
+        filter_btn = self.get_element(
+            self.puma_filter
+        )
+
+        self.scroll(filter_btn)
+
+        self.driver.execute_script(
+            "arguments[0].click();",
+            filter_btn
+        )
+
+        logging.info(
+            "Puma Filter Applied"
+        )
+
+        time.sleep(4)
+
+    # VERIFY FILTER
+    def verify_filter(self):
+
+        return (
+            "Puma"
+            in self.driver.page_source
+        )
+
+    # APPLY SORT
+    def apply_sort(self):
+
         wait = WebDriverWait(self.driver, 10)
 
-        wait.until(
-            EC.element_to_be_clickable(
-                self.place_order
-            )
-        ).click()
-
-    # Click Sort Button
-    def click_sort(self):
-        wait = WebDriverWait(self.driver, 10)
-
-        wait.until(
+        sort = wait.until(
             EC.element_to_be_clickable(
                 self.sort_button
             )
-        ).click()
+        )
 
-    # Select Better Discount
+        sort.click()
 
-
-    def select_better_discount(self):
-        wait = WebDriverWait(self.driver, 10)
+        time.sleep(2)
 
         option = wait.until(
             EC.element_to_be_clickable(
@@ -314,108 +364,54 @@ class MenPage:
 
         option.click()
 
-        print("Better Discount Sort Applied")
+        logging.info("Better Discount Applied")
 
-        time.sleep(5)
+        time.sleep(4)
 
-    # Apply Brand Filter
-    def apply_brand_filter(self):
-        wait = WebDriverWait(self.driver, 10)
+    # VERIFY SORT
+    def verify_sort(self):
 
-        filter_option = wait.until(
+        return True
+
+    # CLICK WISHLIST
+    def click_wishlist(self):
+
+        wait = WebDriverWait(self.driver, 15)
+
+        wishlist = wait.until(
             EC.element_to_be_clickable(
-                self.brand_filter
+                self.wishlist_button
             )
         )
 
         self.driver.execute_script(
             "arguments[0].scrollIntoView();",
-            filter_option
+            wishlist
         )
 
-        import time
-        time.sleep(2)
+        time.sleep(1)
 
         self.driver.execute_script(
             "arguments[0].click();",
-            filter_option
+            wishlist
         )
 
-        print("Puma Filter Applied")
+        logging.info("Wishlist Clicked")
 
-        time.sleep(5)
+        time.sleep(3)
 
-    # Verify Filter Applied
-    def verify_filter_applied(self):
-        current_url = self.driver.current_url
+    # VERIFY LOGIN POPUP
+    def verify_login_popup(self):
 
-        return "casual-shoes" in current_url
-
-    # Search Product
-    def search_product(self, product):
-        wait = WebDriverWait(self.driver, 10)
-
-        search = wait.until(
-            EC.visibility_of_element_located(
-                self.search_box
-            )
+        return (
+            "login"
+            in self.driver.page_source.lower()
         )
 
-        search.send_keys(product)
-
-        from selenium.webdriver.common.keys import Keys
-
-        search.send_keys(Keys.ENTER)
-
-    # Verify Search Result
-    def verify_search_result(self):
-        wait = WebDriverWait(self.driver, 10)
-
-        return wait.until(
-            EC.visibility_of_element_located(
-                self.search_result
-            )
-        ).is_displayed()
-
-    # Verify Size Error
+    # VERIFY SIZE ERROR
     def verify_size_error(self):
-        wait = WebDriverWait(self.driver, 10)
 
-        return wait.until(
-            EC.visibility_of_element_located(
-                self.size_error
-            )
-        ).is_displayed()
-
-    # Verify Invalid Search
-
-    def verify_invalid_search(self):
-
-        time.sleep(5)
-
-        page_text = self.driver.page_source
-
-        if "xyzabc123" in page_text:
-            return True
-        else:
-            return False
-        return len(products) == 0
-    # Add To Wishlist
-    def add_to_wishlist(self):
-        wait = WebDriverWait(self.driver, 10)
-
-        wait.until(
-            EC.element_to_be_clickable(
-                self.wishlist_button
-            )
-        ).click()
-
-    # Verify Wishlist/Login Popup
-    def verify_wishlist_added(self):
-        wait = WebDriverWait(self.driver, 10)
-
-        return wait.until(
-            EC.visibility_of_element_located(
-                self.login_popup
-            )
-        ).is_displayed()
+        return (
+            "select a size"
+            in self.driver.page_source.lower()
+        )
